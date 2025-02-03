@@ -1,9 +1,6 @@
-FROM ubuntu:20.04
+FROM eclipse-temurin:17.0.14_7-jre-ubi9-minimal
 
 WORKDIR /app
-
-RUN apt update
-RUN apt install -y openjdk-17-jre
 
 COPY ./petclinic.jar /app/petclinic.jar
 
