@@ -8,9 +8,11 @@ RUN mvn package
 
 
 
-FROM eclipse-temurin:17.0.14_7-jre-ubi9-minimal
+FROM alpine:3.21
 
 WORKDIR /app
+
+RUN apk add openjdk17
 
 COPY --from=build /app/spring-petclinic/target/spring-petclinic*.jar /app/petclinic.jar
 
